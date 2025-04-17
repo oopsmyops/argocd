@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |-
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"ingress-2048","namespace":"game-2048"},"spec":{"ingressClassName":"nginx","rules":[{"host":"game-2048.example.com","http":{"paths":[{"backend":{"service":{"name":"service-2048","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+  creationTimestamp: "2025-04-17T15:08:59Z"
+  generation: 2
+  name: ingress-2048
+  namespace: game-2048
+  resourceVersion: "42100"
+  uid: f3949f59-fa25-4043-9317-a7058ea12138
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: game-7f000001.nip.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: service-2048
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost
