@@ -1,0 +1,25 @@
+# Proposed changes to fix the Ingress and Service issues
+
+# Ingress: Change the ingress class to a valid one (e.g., nginx)
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-2048
+  namespace: game-2048
+spec:
+  ingressClassName: nginx  # Changed from alb to nginx
+  rules:
+  - host: game-2048.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service-2048
+            port:
+              number: 80
+
+# Service: Delete the duplicate endpoint resource (requires manual intervention)
+# The following command should be executed in the cluster:
+# kubectl delete endpoints service-2048 -n game-2048
