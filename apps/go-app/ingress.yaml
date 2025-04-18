@@ -1,19 +1,7 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: go-app-ingress
-  namespace: okteto-go-app
-  annotations:
-    kubernetes.io/ingress.class: nginx
-spec:
-  rules:
-  - host: go-7f000001.nip.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: go-app-service
-            port:
-              number: 80
+YXBpVmVyc2lvbjogbmV0d29ya2luZy5rOHMuaW8vdjEKa2luZDogSW5ncmVzcwptZXRhZGF0YToK
+ICBuYW1lOiBnby1hcHAtaW5ncmVzcwogIG5hbWVzcGFjZTogb2t0ZXRvLWdvLWFwcAogIGFubm90
+YXRpb25zOgogICAgaW5ncmVzc0NsYXNzTmFtZTogbmdpbngKc3BlYzoKICBydWxlczoKICAtIGhv
+c3Q6IGdvLTdmMDAwMDAxLm5pcC5pbwogICAgaHR0cDoKICAgICAgcGF0aHM6CiAgICAgIC0gcGF0
+aDogLwogICAgICAgIHBhdGhUeXBlOiBQcmVmaXgKICAgICAgICBiYWNrZW5kOgogICAgICAgICAg
+c2VydmljZToKICAgICAgICAgICAgbmFtZTogZ28tYXBwLXNlcnZpY2UKICAgICAgICAgICAgIHBv
+cnQ6CiAgICAgICAgICAgICAgIG51bWJlcjogODA=
